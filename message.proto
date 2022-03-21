@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package tii.ros2msg;
+
+option go_package = "github.com/tiiuae/ros2msg";
+
+message Message {
+    string topic = 1;
+    string type = 2;
+    int64 timestamp = 3;
+    bytes data = 4;
+}
