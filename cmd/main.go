@@ -109,6 +109,7 @@ type readResult struct {
 }
 
 type cancelableReader struct {
+	//nolint:containedctx
 	context    context.Context
 	src        io.Reader
 	readChan   chan []byte

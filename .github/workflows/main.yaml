@@ -1,0 +1,25 @@
+name: main
+
+on:
+  push:
+    branches: [main]
+    tags: [v*]
+  pull_request:
+    branches: [main]
+    tags: [v*]
+  workflow_dispatch:
+
+jobs:
+  run-linter:
+    runs-on: ubuntu-latest
+    container: ghcr.io/tiiuae/tii-golang-ros:galactic-go1.18
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare environment
+        shell: bash
+        run: ./lint.sh
+
+      - uses: golangci/golangci-lint-action@v2
+        with:
+          args: ${{ env.lint_dirs }}
