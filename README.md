@@ -8,7 +8,7 @@ line tool using some of the features.
 ros2msg CLI tool requires installing and sourcing a ROS galactic environment.
 After that the command line tool can be installed by running
 
-  go install github.com/tiiuae/ros2msg/cmd/ros2msg@latest
+    go install github.com/tiiuae/ros2msg/cmd/ros2msg@latest
 
 Make sure that `$GOBIN` is in `$PATH`. Usage information can be displayed by
 running `ros2msg --help`.
