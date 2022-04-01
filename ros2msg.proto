@@ -4,6 +4,16 @@ package tii.ros2msg;
 
 option go_package = "github.com/tiiuae/ros2msg";
 
+message Topic {
+    string name = 1;
+    string type = 2;
+}
+
+message UntypedMessage {
+    int64 timestamp = 1;
+    bytes data = 2;
+}
+
 message Message {
     string topic = 1;
     string type = 2;

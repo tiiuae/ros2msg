@@ -1,3 +1,3 @@
 package ros2msg
 
-//go:generate protoc -I=. --go_out=. --go_opt=paths=source_relative message.proto
+//go:generate protoc -I=. --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative ros2msg.proto broker/broker.proto

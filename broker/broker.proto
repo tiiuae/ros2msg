@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tii.ros2msg.broker;
+
+option go_package = "github.com/tiiuae/ros2msg/broker";
+
+import "ros2msg.proto";
+
+message PublishRequest {
+    oneof payload {
+        tii.ros2msg.Topic topic = 1;
+        tii.ros2msg.UntypedMessage message = 2;
+    }
+}
+
+message PublishResponse {}
+
+service Publisher {
+    // The payload field of the first request in the stream must be of type
+    // Topic.
+    rpc Publish (stream PublishRequest) returns (PublishResponse);
+}
